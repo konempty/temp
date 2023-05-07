@@ -4,4 +4,4 @@ COPY . /app
 WORKDIR /app
 
 RUN ./gradlew assemble && \
-    rm -rf /app \
+    rm -rf /app
