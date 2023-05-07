@@ -1,4 +1,4 @@
-FROM ghcr.io/konempty/temp-gradle-cache:${APP_PHASE} AS build
+FROM ghcr.io/konempty/temp-gradle-cache AS build
 COPY . /app
 WORKDIR /app
 
