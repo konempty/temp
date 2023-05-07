@@ -1,4 +1,4 @@
-FROM ghcr.io/konempty/temp-gradle-cache AS build
+FROM ghcr.io/konempty/temp-gradle-cache:${APP_PHASE} AS build
 COPY . /app
 WORKDIR /app
 
@@ -23,5 +23,5 @@ EXPOSE 8080
 RUN rm /usr/bin/curl
 
 ENTRYPOINT java \
--Dspring.profiles.active=${APP_PHASE:-alpha} \
+-Dspring.profiles.active=${APP_PHASE} \
 -jar /app/app.jar
