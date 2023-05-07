@@ -2,13 +2,6 @@ FROM ghcr.io/konempty/temp-gradle-cache:${APP_PHASE} AS build
 COPY . /app
 WORKDIR /app
 
-RUN apt-get -y update && \
-    apt-get -y upgrade
-
-ENV TZ=Asia/Seoul
-
-RUN rm /usr/bin/curl
-
 RUN ./gradlew assemble
 
 FROM eclipse-temurin:17.0.7_7-jdk AS run
