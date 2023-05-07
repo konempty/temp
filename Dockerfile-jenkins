@@ -14,3 +14,5 @@ RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/
 RUN mv kustomize /usr/local/bin/
 
 RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+USER jenkins

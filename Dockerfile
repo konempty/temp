@@ -15,9 +15,6 @@ COPY --from=build \
   /app/app.jar
 
 EXPOSE 8080
-#불필요한 패키지 제거
-#deploy 생성 후 권한 설정
-RUN rm /usr/bin/curl
 
 ENTRYPOINT java \
 -Dspring.profiles.active=${APP_PHASE} \
