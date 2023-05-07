@@ -1,4 +1,8 @@
 FROM eclipse-temurin:17.0.7_7-jdk AS cache
+
+RUN apt-get -y update && \
+    apt-get -y upgrade
+
 COPY . /app
 WORKDIR /app
 RUN ./gradlew assemble && \

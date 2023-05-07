@@ -9,9 +9,6 @@ FROM eclipse-temurin:17.0.7_7-jdk AS run
 
 ENV TZ=Asia/Seoul
 
-RUN apt-get -y update && \
-    apt-get -y upgrade
-
 ## spring 패키지 복사
 COPY --from=build \
   /app/build/libs/*.jar \
