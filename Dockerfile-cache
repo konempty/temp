@@ -3,12 +3,5 @@ FROM eclipse-temurin:17.0.7_7-jdk AS cache
 COPY . /app
 WORKDIR /app
 
-RUN apt-get -y update && \
-    apt-get -y upgrade
-
-ENV TZ=Asia/Seoul
-
-RUN rm /usr/bin/curl
-
 RUN ./gradlew assemble && \
     rm -rf /app
