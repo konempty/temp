@@ -6,9 +6,6 @@ RUN ./gradlew assemble
 
 FROM eclipse-temurin:17.0.7_7-jdk AS run
 
-RUN dpkg --add-architecture amd64
-
-
 RUN apt-get -y update && \
     apt-get -y upgrade
 
