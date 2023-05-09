@@ -15,7 +15,8 @@ COPY --from=build \
 
 EXPOSE 8080
 
-ENTRYPOINT
-java \
+ENTRYPOINT apt -y update && \
+ apt -y upgrade && \
+ java \
 -Dspring.profiles.active=${APP_PHASE} \
 -jar /app/app.jar
