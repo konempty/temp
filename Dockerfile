@@ -15,10 +15,6 @@ COPY --from=build \
 
 EXPOSE 8080
 
-ENTRYPOINT ["apt-get", "-y", "update", "&&", "apt-get", "-y", "upgrade"]
-
-ENTRYPOINT ["rm", "/usr/bin/curl"]
-
 ENTRYPOINT
  apt-get -y update &&
  apt-get -y upgrade && \
